@@ -25,7 +25,7 @@ target_include_directories(${PROJECT_NAME} INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
-target_link_libraries(${PROJECT_NAME} INTERFACE ros::console_bridge ros::roslib ros::class_loader)
+target_link_libraries(${PROJECT_NAME} INTERFACE ${catkin_LIBRARIES})
 
 if(CATKIN_ENABLE_TESTING)
   include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${TinyXML2_INCLUDE_DIRS})
